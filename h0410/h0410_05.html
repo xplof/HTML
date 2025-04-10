@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 만들기</title>
+    <style>
+        *{padding: 0; margin:100px auto;}
+        table,th,td{border:1px solid black; 
+        text-align: left}
+        th,td{width: 150px; height: 50px;}
+        table{text-align: center;}
+        .c1{width: 100px;}
+        th,.r{text-align: center;}
+        td{padding-left: 7px;}
+        th{background: #d3d3d3;}
+        .r{font-weight: 600;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>방 이름</th>
+            <th>대상</th>
+            <th>크기</th>
+            <th>가격</th>
+        </tr>
+        <tr>
+            <td class="r">유채방</td>
+            <td>여성도미토리</td>
+            <td rowspan="3">4인실</td>
+            <td rowspan="4">1인 20,000원</td>
+        </tr>
+        <tr>
+            <td class="r" rowspan="2">동백방</td>
+            <td>동성도미토리</td>
+        </tr>
+        <tr>
+            <td>가족1팀</td>
+        </tr>
+        <tr>
+            <td class="r">천해향방</td>
+            <td>-</td>
+            <td>2인실</td>
+        </tr>
+        <tr>
+            <th colspan="4">바깥채 전체를 렌트합니다</th>
+
+        </tr>
+    </table>
+
+
+    <!-- <table>
+        <colgroup>
+            <col width="100">
+            <col width="300">
+            <col width="100">
+            <col width="300">
+        
+        
+        </colgroup>
+        <tr>
+            <td class="c1">이름</td>
+            <td ></td>
+            <td class="c1">연락처</td>
+            <td ></td>
+
+
+        </tr>
+        <tr>
+            <td class="c1">주소</td>
+            <td colspan="3"></td>
+
+        </tr>
+        <tr>
+            <td class="c1">자기소개</td>
+            <td colspan="3"></td>
+   
+ 
+        </tr>
+
+    </table> -->
+    <!-- <table>
+        <tr>
+            <td>1행1열</td>
+            <td rowspan="3">1행2열</td>
+            <td>1행3열</td>
+            <td>1행4열</td>
+        </tr>
+        <tr>
+            <td>2행1열</td>
+            <td>2행3열</td>
+            <td>2행4열</td>
+        </tr>
+        <tr>
+            <td rowspan="3">3행1열</td>
+            <td>3행3열</td>
+            <td rowspan="2">3행4열</td>
+        </tr>
+        <tr>
+            <td>4행2열</td>
+            <td>4행3열</td>
+        </tr>
+        <tr>
+            <td>5행2열</td>
+            <td>5행3열</td>
+            <td>5행4열</td>
+        </tr> -->
+        <!-- <tr>
+            <td  colspan="2">1행 1열</td>
+            <td>1행 3열</td>
+            <td>1행 4열</td>
+        </tr>
+        <tr>
+            <td>2행 1열</td>
+            <td colspan="3">2행 2열</td>
+        </tr>
+        <tr>
+            <td colspan="4">3행 1열</td>
+        </tr> -->
+    </table>
+    
+</body>
+</html>
