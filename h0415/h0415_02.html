@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Single+Day&display=swap');
+        *{margin:0; padding: 0;
+           
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                 
+        }
+        a{text-decoration: none; color:inherit;}
+        ul,ol{list-style: none;}
+        #header-top{width:100%; height:35px; background: #202020;}
+        #header-top ul{width:380px;  font-size: 13px;
+            margin-right: 40px;
+            height:35px; line-height: 33px;  
+            float: right; 
+            color:white;
+            display: flex; justify-content: space-between; 
+        }
+        nav{width: 100%; height: 81px; border-bottom: 1px solid black;}
+        #nav-nav{width:1840px ; height: 81px;
+             margin: 0 auto; border: 1px solid black; 
+             display: flex; justify-content: space-between;
+            align-items: center;}
+        nav .logo a{ display: inline-block;
+        width: 100px; height: 30px;
+        background: url('image/ico_set.png') -320px -385px no-repeat;
+        background-size: 800px 800px; }
+        nav .menu{
+            width: 750px; height: 81px; border: 1px solid black;
+         font-weight: 700; font-size: 22px;}
+        nav .q_menu{
+            width:155px ; height:52px ; border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-top">
+            <ul>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">고객행복센터</a></li>
+                <li><a href="#">배송지역검색</a></li>
+                <li><a href="#">기프트카드 등록</a></li>
+            </ul>
+        </div>
+        <nav>
+            <div id="nav-nav">
+                <div class="logo">
+                    <a href=""></a>
+                </div>
+                <div class="menu"></div>
+                    <ul>
+                        <li><a href="">COOKIT소개</a></li>
+                        <li><a href="">COOKIT메뉴</a></li>
+                        <li><a href="">리뷰</a></li>
+                        <li><a href="">이벤트</a></li>
+                        <li><a href="">MY쿡킷</a></li>
+                    </ul>
+                </div>
+                <div class="q_menu"></div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
