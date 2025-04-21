@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .top{width: 100%; height: 100px; border: 1px solid black; background-color: rgb(121, 108, 204);
+       }
+        .banner{width: 100%; height: 400px; border: 1px solid black; background-color: rgb(201, 52, 82);
+            background: url('images/img_re_main_slide_20231204-2_pc.png')no-repeat 0 -400px;}
+        section{display: flex;}
+        .news{width: 50%; height: 300px;border: 1px solid black; background-color: rgb(141, 141, 141);}
+        .img{width: 50%; height: 300px;border: 1px solid black; background-color: rgb(87, 163, 140);}
+        .foot{width: 100%; height: 100px; border: 1px solid black; background-color: rgb(216, 216, 84);}
+        @media screen and (max-width:800px){
+            .banner{background: url('images/img_re_main_slide_20231204-2_mo.png')no-repeat 0 -550px;}
+            section{flex-direction: column;}
+            .news{width: 100%; height: 200px;}
+            .img{width: 100%; height: 200px;}
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="top">상단</div>
+        <div class="banner"></div>
+        <section>
+            <div class="news"></div>
+            <div class="img"></div>
+        </section>
+        <div class="foot"></div>
+    </div>
+    
+</body>
+</html>

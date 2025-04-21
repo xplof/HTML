@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+        section{width: 450px;margin: 50px auto;}
+        section>h3{display: block;
+        height: 140px; 
+        font-size: 36px; text-align: center;
+        padding-top: 20px;}
+        section>ul{display: flex; }
+        ul>li{display: inline-block; list-style: none; }
+        .search a{margin:0 15px 10px 0; text-decoration: none; color: inherit;
+            display: inline-block; height: 40px;}
+        .search li:nth-child(1) a{border-bottom: 5px solid black;}
+        .search li:hover a{border-bottom: 5px solid black;}
+        form input{width: 100%; height: 40px;}
+        .savefind{display:flex; justify-content: space-between;}
+        .save{display:flex;  align-items: center;}
+        .save input[type='checkbox']{width: 10px; height: 10px; margin-right: 5px;}
+        .login{width: 100%;height: 55px; margin-top: 10px;
+            background: #bdd61a; font-weight: 700; font-size: 22px;
+        display: flex; align-items: center; justify-content: center;}
+
+    </style>
+
+</head>
+<body>
+    <section>
+        <h3>로그인</h3>
+        <ul class="search">
+            <li><a href>회원 로그인</a></li>
+            <li><a href>비회원 주문조회</a></li>
+        </ul>
+        <form action="">
+            <input type="text" id="id" name="id" placeholder="6~20자">
+            <input type="password" id="pw" name="pw" placeholder="6~20자">
+            <div class="savefind">
+                <div class="save">
+                    <input type="checkbox" id="saveid" name="saveid">
+                    <span>아이디 저장</span>
+                </div>
+                <div>
+                    <span>아이디 찾기</span>
+                    <span>ㅣ</span>
+                    <span>비밀번호 찾기</span>
+                </div>
+            </div>
+        </form>
+        <div class="login">
+            로그인
+        </div>
+    </section>
+</body>
+</html>

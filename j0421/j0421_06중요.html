@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{margin: 0; padding: 0;}
+            div{width: 200px; height: 50px; border: 1px solid black;
+            text-align: center; line-height: 49px;}
+        </style>
+        <script>
+            //체중, 키(cm) 입력받아, 체중(kg) ÷ {신장(m) × 신장(m)} 값 출력
+            //입력 2개 - 체중 키
+            //cm을 m으로 변경
+            //let kg = Number(prompt("체중을 입력하세요"));
+           // let cm = Number(prompt("키를 입력하세요"));
+            //let m= cm/100;
+           // console.log("bmi : ",kg/(m*m))
+
+            /*
+            //국어 영어 수학점수 입력받아 값을 출력
+            let kor = prompt("국어점수를 입력하세요");
+            let eng = prompt("영어점수를 입력하세요");
+            let math = prompt("수학점수를 입력하세요");
+            //합계 평균 출력
+            console.log("합계 : ", Number(kor)+Number(eng)+Number(math));
+            console.log("평균 : ", (Number(kor)+Number(eng)+Number(math))/3);
+            */
+
+        </script>
+</head>
+<body>
+    <h2 id="bmi">BMI 계산하기</h2>
+    <label for="">신장</label>
+    <input type="text" name="height" id="height">
+    <label for="">cm</label>
+    <br>
+    <label for="">체중</label>
+    <input type="text" name="weight" id="weight">
+    <label for="">kg</label>
+    <br>
+    <button onclick="calBtn()">계산하기</button>
+    <div id="result">0</div>
+    <div id="result2">정상</div>
+
+    <script>
+        function calBtn(){
+            alert("계산하기 실행");
+            let cm=Number(document.querySelector("#height").value);
+            let kg=Number(document.querySelector("#weight").value);
+            let m= cm/100;
+            let cal=kg/(m*m);
+            
+            
+            console.log("키 : "+(document.querySelector("#height").value));
+            console.log("글자 : ",document.querySelector("#bmi").innerText="결과");
+            document.querySelector("#result").innerText=cal;
+        if(cal>=30){
+            document.querySelector("#result2").innerText="고도비만";
+        }else if(cal>=25){
+            document.querySelector("#result2").innerText="비만";
+            
+        }else if(cal>=23){
+            document.querySelector("#result2").innerText="과체중";
+            
+        }else if(cal>=18.5){
+            document.querySelector("#result2").innerText="정상";
+            
+        }else{
+            document.querySelector("#result2").innerText="저체중";
+
+        }
+    }
+
+    </script>
+
+</body>
+</html>
