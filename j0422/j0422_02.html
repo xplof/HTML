@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{border: 1px solid black; width: 200px;
+        height: 40px; text-align: center;}
+    </style>
+    <script>
+        /*
+        let num=0; //전역변수
+        function cbtn(){
+            num=num+1;
+            // num+=1 복합대입연산자
+            //num++
+            document.querySelector("#cal").innerText=num;
+        }
+        function cbtn2(){
+            num--;
+            document.querySelector("#cal").innerText=num;
+        }*/
+
+        function cbtn(){
+            //alert("이벤트 당첨");
+            //남자., 25세이상 &&
+            let age=Number(document.querySelector("#age").value);
+            let gender=document.querySelector("#gender").value;
+
+            if (age>=25 && gender=="남자"){
+                alert("당첨!")
+            }else{
+                alert("다음 기회에...")
+            }
+        }//cbtn
+
+        function checkbtn(){
+            let age= Number(document.querySelector("#age").value);
+            var resultTxt = age<25?"이벤트 신청불가":"이벤트 신청가능";
+            document.querySelector("#txt").style.color="red";
+            document.querySelector("#txt").innerText=resultTxt;
+        }
+    </script>
+
+</head>
+<body>
+    <h2>회원가입</h2>
+    <label for="">나이</label>
+    <input type="text" id="age">
+    <span id="txt">나이를 정확히 입력하세요.</span><br>
+    <label for="">성별</label>
+    <input type="text" id="gender" onfocus="checkbtn()"><br>
+    <button type="button" onclick="cbtn()">이벤트신청</button>
+
+
+</body>
+</html>
