@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border: 1px solid black; margin: 20px auto;
+        width: 600px; height: 200px; font-size: 40px; text-align: center;
+    line-height: 200px;}
+    button{width: 150px; height: 40px; text-align: center;
+    display: block; margin: 5px auto;}
+    </style>
+</head>
+<body>
+    <div id="txt">2025-04-23 11:41:25</div>
+    <button id="start">시간진행</button>
+    <button id="stop">시간멈춤</button>
+        <script>
+
+            getClock(); //구동시 바로 실행
+
+            //시간진행버튼 클릭시 시간진행되도록 구현
+            document.querySelector("#start").onclick=start;
+            document.querySelector("#stop").onclick=stop;
+            function stop(){
+                clearInterval(timer);
+            }
+
+            function start(){
+                timer=setInterval(getClock,1000);// 함수호출, 1초마다
+
+            }
+
+            //setInterval - 일정한 시간간격으로 함수 호출실행
+
+
+            function getClock(){
+                let today=new Date();
+                let year=today.getFullYear()
+                let month=today.getMonth()
+               // let txt=`${year}-${month}-${}`
+                document.querySelector("#txt").innerText=today.getFullYear() + "-" + `${month<10?"0"+month:month}` + "-" + today.getDate() + " " +
+                today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            }
+
+        
+
+        </script>
+
+</body>
+</html>

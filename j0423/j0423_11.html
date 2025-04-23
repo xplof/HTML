@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- 제이쿼리 최신버전 다운로드 -->
+   <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <title>제이쿼리</title>
+   <style>
+      button{font-size: 40px;}
+   </style>
+   <script>
+   $(function(){
+      let num=1;
+      $("#next").click(function(){
+         num++; //1증가
+         if(num>=7) num=1;
+         $("#img").attr("src",`images/best0${num}.jpg`)
+      })
+
+      $("#pre").click(function(){
+         num--;
+         if(num<=0) num=6;
+         $("#img").attr("src",`images/best0${num}.jpg`)
+      })
+
+   })
+
+   </script>
+   <style>
+   </style>
+</head>
+
+<body>
+
+
+<div>
+   <img id="img" src="images/best01.jpg" alt="">
+</div>
+   <button id="pre"><i class="fa-solid fa-chevron-left"></i></button>
+   <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+   <script>
+      
+      
+      
+   </script>
+</body>
+</html>
