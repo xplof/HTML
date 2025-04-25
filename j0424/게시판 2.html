@@ -27,6 +27,7 @@
       let no=1
       let flag=0
       let boardno=0//수정, 삭제시 번호
+      let title,id,bdate,bhit;
       $(function(){
          //게시글 5개리스트 출력함수
          boardList();
@@ -34,13 +35,17 @@
          //저장버튼 이벤트
          $(document).on("click","#save",function(){
             if (flag==0){//게시글 저장버튼 클릭시
-               let title = $("#title").val()
-               let id = $("#id").val()
+               title = $("#title").val()
+               id = $("#id").val()
                //게시글 저장함수 호출
                boardOne(title,id);
             
-            }else{
-               alert("수정저장버튼 클릭")
+            }else{ //게시글 수정저장버튼 클릭시
+               alert("게시글을 수정했습니다.")
+               //수정함수 호출 : boardno,title,id,bdate,bhit
+               title = $("#title").val()
+               id = $("#id").val()
+               boardOneUpdate()
                $("#save").text("게시글 저장")
                flag=0
             }
@@ -58,9 +63,22 @@
          
          //수정버튼 이벤트
          $(document).on("click",".updatebtn",function(){
-            console.log($(this).closest("tr").attr("id"))
-            flag=1
-            $("#save").text("수정저장")
+            console.log($(this).closest("tr").children())
+
+            boardno= $(this).closest("tr").attr("id")
+            if(confirm(`${boardno}번 게시글을 수정하시겠습니까?`)){
+               flag=1;
+               $("#save").text("수정저장");
+               //수정시 데이터 변경할 변수들
+               let trtd= $(this).closest("tr").children();
+               title= trtd[1].innerText;//제목변수
+               id= trtd[2].innerText;//작성자변수
+               bdate= trtd[3].innerText;//작성일변수
+               bhit= trtd[4].innerText;//조회수변수
+               //input에 title,id의 글자 넣기
+               $("#title").val(title);
+               $("#id").val(id);
+            }//
          })
 
       })//jquery
@@ -108,6 +126,25 @@
          }
          $("#tbody").html(hdata)
       }//게시글 5개출력
+      function boardOneUpdate(){
+         hdata=``; //초기화
+         let today = new Date()
+         hdata+=`<td>${boardno}</td>`;
+         hdata+=`<td class="title">${title}</td>`;
+         hdata+=`<td>${id}</td>`;
+         hdata+=`<td>${today.getFullYear()}-${(today.getMonth()+1)<10?"0"+(today.getMonth()+1):(today.getMonth()+1)}-${today.getDate()}</td>`;
+         hdata+=`<td>${bhit}</td>`;
+         hdata+=`<td>`;
+         hdata+=`<button type="button" class="updatebtn">수정</button>`;
+         hdata+=`<button type="button" class="deletebtn">삭제</button>`;
+         hdata+=`</td>`;
+         hdata+=`</tr>`;
+         $(`#${boardno}`).html(hdata)//게시글 1개 수정
+         //초기화
+         $("#title").val("")
+         $("#id").val("")
+         alert("게시글이 수정되었습니다.")
+      }//boardoneupdate
    </script>
    
 </head>

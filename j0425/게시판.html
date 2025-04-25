@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <title>Document</title>
+   <link rel="stylesheet" href="css/style.css" type="text/css">
+   <script>
+      let hdata;
+      let no=1
+      let title,id;
+      
+      
+      //등록완 삭제 수정 구현
+      $(function(){
+         boardList();//5개출력
+         
+         //1개등록
+         $(document).on("click","#save",function(){
+            hdata=''
+            title=$("#title").val()
+            id=$("#id").val()
+            hdata+=`<tr="${no}">`
+            hdata+=`<td>${no}</td>`
+            hdata+=`<td>${title}</td>`
+            hdata+=`<td>${id}</td>`
+            hdata+=`<td>2024-04-25</td>`
+            hdata+=`<td>2500</td>`
+            hdata+=`<td>`
+            hdata+=`<button type="button" id="mod">수정</button>`
+            hdata+=`<button type="button" id="del">삭제</button>`
+            hdata+=`</td>`
+            hdata+=`</tr>`
+            no++
+            $("#title").val("")
+            $("#id").val("")
+            $("#tbody").prepend(hdata)
+         })//1개등록
+
+         //삭제
+         $(document).on("click","#del",function(){
+
+
+         })
+
+
+
+
+      })//query
+      
+      //함수부분
+      function boardList(){
+         for(let i=0;i<5;i++){
+            hdata+=`<tr id="${i+1}">`
+            hdata+=`<td>${i+1}</td>`
+            hdata+=`<td>안녕</td>`
+            hdata+=`<td>ㅇㅇ</td>`
+            hdata+=`<td>2024-04-25</td>`
+            hdata+=`<td>2500</td>`
+            hdata+=`<td>`
+            hdata+=`<button type="button" id="mod">수정</button>`
+            hdata+=`<button type="button" id="del">삭제</button>`
+            hdata+=`</td>`
+            hdata+=`</tr>`
+            no++
+            $("#tbody").html(hdata)
+         }
+      }//게시글 5개
+
+      function apd(){
+         $("#save").click
+
+      }
+   </script>
+   
+</head>
+<body>
+   <div id="container">
+      <h2>게시판</h2>
+      <div id="input">
+         <div>글을 입력하세요</div>
+         <input type="text" id="title" name="title" placeholder="제목을 입력하세요"><br>
+         <input type="text" id="id" name="id" placeholder="작성자명을 입력하세요"><br>
+         <button type="button" id="save">저장</button>
+      </div>
+      
+      
+      <table>
+         <colgroup>
+            <col width="10%">
+            <col width="*">
+            <col width="15%">
+            <col width="15%">
+            <col width="15%">
+            <col width="20%">
+         </colgroup>
+         <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+            <th>기타</th>
+         </tr>
+         <tbody id="tbody">
+
+         </tbody>
+      </table>
+
+
+</div>
+</body>
+</html>
